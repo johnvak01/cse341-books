@@ -8,6 +8,7 @@ if (!PORT) {
 const startServer = async () => {
     try {
         await connectToDb();
+        // const books = await getDb().collection('books').find({}).toArray();
 
         app.listen(PORT, () => {
             console.log(`Server listening on port ${PORT}`);
