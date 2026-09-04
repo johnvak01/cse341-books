@@ -1,10 +1,10 @@
-import { getDb } from "../db/connect";
+import { getDb } from "../db/connect.js";
 
 
 const getAllBooks = async()=>{
-    const db = getDB();
+    const db = getDb();
     const collections = db.collection('books');
-    const books = collections.find({}).toArray();
+    const books = await collections.find({}).toArray();
     return books;
 }
 export {getAllBooks};
