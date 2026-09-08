@@ -1,0 +1,38 @@
+# Week 01 Reflection
+
+1. Include a link to one of your Pull Requests (PRs) at GitHub. (It should be merged and closed at this point.)
+    
+GitHub Pull Request Link: https://github.com/johnvak01/cse341-books/pull/7
+
+2. Include a link to one of your Issues at GitHub. (It should be closed at this point.)
+
+GitHub Issue Link: https://github.com/johnvak01/cse341-books/issues/3
+
+3. Which issue took more or less time than expected? Why?
+
+Answer: The initial setup (#1) took more time then expected due to needing to fix the IP addressing for mongodb. 
+
+4. Include a link to your walk-though video. (It must include your name, show your web service working at Render, explain the way your `Get Single Book` controller works, and discuss status codes.): 
+
+Video link: https://youtu.be/TvsDLJ_YUXQ
+
+5.a. Include a GitHub link to a file that shows how your app uses sensitive data, such as the MongoDB connection string.
+
+GitHub link: https://github.com/johnvak01/cse341-books/blob/main/src/db/connect.js
+
+5.b. How did you store sensitive data? Why is that approach important?
+
+Answer: Sensitive data is included in the .env file which is not uploaded to github. Sensitive information should not be stored in a publically acessible area.
+
+6.a. Include a GitHub link to a file that shows one other implementation decision you made.
+
+GitHub link: https://github.com/johnvak01/cse341-books/blob/main/src/controllers/books.js
+
+6.b. What decision does this file show, and why did you make that choice?
+
+Answer: I used "bookId" instead of "id" for the parameter as I felt it was clearer and less generic than the suggested "id". 
+This weeks assignment didn't really leave much room for individual decision making.
+
+7. What is one specific habit or process you will work on for next week?
+
+Answer: I want to be able to write my own spec sheets.
