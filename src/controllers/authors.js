@@ -32,10 +32,6 @@ const createAuthor = async (req, res) => {
             return res.status(400).json({ message: 'Missing required author fields.' });
         }
 
-        if (!isIsoDate(birthYear.toString())) {
-            return res.status(400).json({ message: 'birthYear must be a valid ISO date string (YYYY-MM-DD).' });
-        }
-
         const existingAuthor = await getAuthorByIdFromDb(id);
         if (existingAuthor) {
             return res.status(409).json({ message: 'Author id already exists.' });
@@ -57,10 +53,6 @@ const updateAuthor = async (req, res) => {
 
         if (!name || birthYear === undefined) {
             return res.status(400).json({ message: 'Missing required author fields.' });
-        }
-
-        if (!isIsoDate(birthYear.toString())) {
-            return res.status(400).json({ message: 'birthYear must be a valid ISO date string (YYYY-MM-DD).' });
         }
 
         const existingAuthor = await getAuthorByIdFromDb(id);
@@ -94,25 +86,5 @@ const deleteAuthor = async (req, res) => {
         return res.status(500).json({ message: 'Unable to delete author.' });
     }
 };
-
-function isIsoDate(str) {
-    // 1. Check the structural format (YYYY-MM-DD)
-    const regex = /^\d{4}-\d{2}-\d{2}$/;
-    if (!str.match(regex)) return false;
-
-    // 2. Parse the individual date parts
-    const [year, month, day] = str.split('-').map(Number);
-
-    // 3. Verify calendar validity using JavaScript's Date object
-    // Note: JavaScript months are 0-indexed (January is 0, December is 11)
-    const date = new Date(year, month - 1, day);
-
-    // Check if the generated components match the input values
-    return (
-        date.getFullYear() === year &&
-        date.getMonth() === month - 1 &&
-        date.getDate() === day
-    );
-}
 
 export { getAllAuthors, getAuthorById, createAuthor, updateAuthor, deleteAuthor };

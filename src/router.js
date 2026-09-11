@@ -104,7 +104,7 @@ router.get('/authors/:id', getAuthorById);
  *                 type: string
  *               name:
  *                 type: string
- *               birthYear:
+ *               birthDate:
  *                 type: number
  *           example:
  *             id: a4
