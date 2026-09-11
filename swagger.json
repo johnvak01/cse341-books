@@ -96,7 +96,7 @@
                   "name": {
                     "type": "string"
                   },
-                  "birthYear": {
+                  "birthDate": {
                     "type": "number"
                   }
                 }

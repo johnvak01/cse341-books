@@ -1,4 +1,4 @@
-import { getAllAuthors as getAllAuthorsFromDb } from '../models/authors.js';
+import { getAllAuthors as getAllAuthorsFromDb, getAuthorById as getAuthorByIdFromDb, createAuthor as createAuthorFromDb, updateAuthor as updateAuthorFromDb, deleteAuthor as deleteAuthorFromDb, authorHasBooks } from '../models/authors.js';
 
 const getAllAuthors = async (req, res) => {
     try {
@@ -20,7 +20,7 @@ const getAuthorById = async (req, res) => {
 
         return res.status(200).json(author);
     } catch (error) {
-        return res.status(500).json({ message: 'Unable to retrieve author.' });
+        return res.status(500).json({ message: `Unable to retrieve author.`});
     }
 };
 
@@ -42,6 +42,7 @@ const createAuthor = async (req, res) => {
         return res.status(201).json(createdAuthor);
 
     } catch (error) {
+        console.error(error);
         return res.status(500).json({ message: 'Unable to create author.' });
     }
 };
