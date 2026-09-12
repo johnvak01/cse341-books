@@ -68,7 +68,7 @@ router.get('/books/:id', getBookByIdHandler);
  *                 type: string
  *               authorId:
  *                 type: string
- *              publicationDate:
+ *               publicationDate:
  *                 type: string
  *           example:
  *             id: a4
@@ -113,7 +113,7 @@ router.post('/books', createBookHandler);
  *                 type: string
  *               authorId:
  *                 type: string
- *              publicationDate:
+ *               publicationDate:
  *                type: string
  *           example:
  *             title: Updated Book

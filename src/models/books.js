@@ -37,12 +37,13 @@ const deleteBook = async (bookId) => {
 };
 
 const authorExists = async (authorId) => {
-    getAuthorById(authorId).then((author) => {
+    try {
+        const author = await getAuthorById(authorId);
         return author !== null;
-    }).catch((err) => {
+    } catch (err) {
         console.error(err);
         return false;
-    });
+    }
 }
 
 export {getAllBooks, getBookById, createBook, updateBook, deleteBook, authorExists};
