@@ -62,6 +62,7 @@
               "example": {
                 "id": "a4",
                 "title": "Example Book",
+                "authorId": "a4",
                 "publicationDate": "1980-01-01"
               }
             }

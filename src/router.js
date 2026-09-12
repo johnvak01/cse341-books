@@ -71,7 +71,7 @@ router.get('/books/:id', getBookByIdHandler);
  *               publicationDate:
  *                 type: string
  *           example:
- *             id: a4
+ *             id: b4
  *             title: Example Book
  *             authorId: a4
  *             publicationDate: 1980-01-01
