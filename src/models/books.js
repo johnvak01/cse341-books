@@ -11,7 +11,7 @@ const getAllBooks = async()=>{
 const getBookById = async (bookId) => {
     const db = getDb();
     const collections = db.collection('books');
-    const book = await collections.findOne({ id: bookId });
+    const book = await collections.findOne({ _id: bookId });
     return book;
 };
 
@@ -25,14 +25,14 @@ const createBook = async (book) => {
 const updateBook = async (bookId, book) => {
     const db = getDb();
     const collections = db.collection('books');
-    await collections.updateOne({ id: bookId }, { $set: book });
+    await collections.updateOne({ _id: bookId }, { $set: book });
     return { id: book}
 }
 
 const deleteBook = async (bookId) => {
     const db = getDb();
     const collections = db.collection('books');
-    const result = await collections.deleteOne({ id: bookId });
+    const result = await collections.deleteOne({ _id: bookId });
     return result;
 };
 
