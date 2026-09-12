@@ -1,0 +1,35 @@
+# Week 02 Reflection
+
+## Links
+
+1. Provide your walk-through video link. This video must demonstrate your API working at Render and follow the script in the assignment.
+Video link: https://youtu.be/rQpZjbYmPTM
+
+2. Provide a link to your deployed Render api-docs URL:
+Render link: https://cse341-books-19kq.onrender.com/api-docs/
+
+3. Provide links to your Pull Requests (they should be merged at this point):
+Books PR:
+Authors PR: https://github.com/johnvak01/cse341-books/pulls?q=is%3Apr+state%3Aclosed
+
+4. Provide links to your GitHub Issues (they should be closed at this point).
+Books Issue: https://github.com/johnvak01/cse341-books/issues/8
+Authors Issue: https://github.com/johnvak01/cse341-books/issues/9
+
+## Plan vs. Implementation
+
+5. Which part of the work took more or less time than expected? Why?
+The most difficult part was the yaml. I experimented with using copilot to generate it buyt it kept wiping the rest of the routes file. I also encountered an unexpected indentation error that took a bit to resolve
+
+Answer:
+
+6. How did Swagger help you in your work this week?
+Swagger is great. It let's me easily test my routes without having to write curl commands.
+
+Answer:
+
+## Week 03 Improvement
+
+7. What is one specific habit or process you will apply next week?
+
+Answer: I will work to use AI more for documentation.
