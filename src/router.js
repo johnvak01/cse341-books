@@ -57,12 +57,12 @@ router.get('/books/:id', getBookByIdHandler);
  *           schema:
  *             type: object
  *             required:
- *               - id
+ *               - _id
  *               - authorId
  *               - title
  *               - publicationDate
  *             properties:
- *               id:
+ *               _id:
  *                 type: string
  *               title:
  *                 type: string
@@ -71,7 +71,7 @@ router.get('/books/:id', getBookByIdHandler);
  *               publicationDate:
  *                 type: string
  *           example:
- *             id: b4
+ *             _id: b4
  *             title: Example Book
  *             authorId: a4
  *             publicationDate: 1980-01-01

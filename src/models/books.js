@@ -26,7 +26,7 @@ const updateBook = async (bookId, book) => {
     const db = getDb();
     const collections = db.collection('books');
     await collections.updateOne({ _id: bookId }, { $set: book });
-    return { id: book}
+    return { _id: book}
 }
 
 const deleteBook = async (bookId) => {

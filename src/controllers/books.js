@@ -26,18 +26,18 @@ const getBookByIdHandler = async(req, res)=>{
 
 const createBookHandler = async(req, res)=>{
     
-        const { id, title, authorId, publicationDate } = req.body;
-        if(!id || !title || !authorId || publicationDate === undefined){
+        const { _id, title, authorId, publicationDate } = req.body;
+        if(!_id || !title || !authorId || publicationDate === undefined){
             return res.status(400).json({ message: 'Missing required book fields' });
         }else if(!await authorExists(authorId)){
             return res.status(400).json({ message: 'Author does not exist' });
         }
         try{
-            const existingBook = await getBookById(id);
+            const existingBook = await getBookById(_id);
             if(existingBook){
                 return res.status(400).json({ message: 'Book id already exists' });
             }
-            const createdBook = await createBook({ id, title, authorId, publishedYear });
+            const createdBook = await createBook({ _id, title, authorId, publicationDate });
             return res.status(201).json(createdBook);
         }catch(error){
             console.error('POST /books failed:', error.message);
@@ -47,8 +47,8 @@ const createBookHandler = async(req, res)=>{
 
 const updateBookHandler = async(req, res)=>{
     const bookId = req.params.id;
-    const { title, authorId, publishedYear } = req.body;
-    if(!title || !authorId || publishedYear === undefined){
+    const { title, authorId, publicationDate } = req.body;
+    if(!title || !authorId || publicationDate === undefined){
         return res.status(400).json({ message: 'Missing required book fields' });
     } else if (!await authorExists(authorId)){
         return res.status(400).json({ message: 'Author does not exist' });
@@ -58,7 +58,7 @@ const updateBookHandler = async(req, res)=>{
         if(!existingBook){
             return res.status(404).json({ message: 'Book not found' });
         }
-        const updatedBook = await updateBook(bookId, { title, authorId, publishedYear });
+        const updatedBook = await updateBook(bookId, { title, authorId, publicationDate });
         return res.status(200).json(updatedBook);
     }catch(error){
         console.error(`PUT /books/${bookId} failed:`, error.message);
