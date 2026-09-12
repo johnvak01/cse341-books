@@ -26,8 +26,8 @@ const getBookByIdHandler = async(req, res)=>{
 
 const createBookHandler = async(req, res)=>{
     
-        const { id, title, authorId, publishedYear } = req.body;
-        if(!id || !title || !authorId || publishedYear === undefined){
+        const { id, title, authorId, publicationDate } = req.body;
+        if(!id || !title || !authorId || publicationDate === undefined){
             return res.status(400).json({ message: 'Missing required book fields' });
         }else if(!await authorExists(authorId)){
             return res.status(400).json({ message: 'Author does not exist' });
